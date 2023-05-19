@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+           http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="create_pokemon_table" author="wsoksoda">
+        <createTable tableName="pokemon">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="type" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="height" type="numeric">
+                <constraints nullable="false"/>
+            </column>
+            <column name="weight" type="numeric">
+                <constraints nullable="false"/>
+            </column>
+            <column name="abilities" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="egg_groups" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="stats" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="genus" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+           http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <include relativeToChangelogFile="true" file="changelog/001_create_pokemon_table.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/101_create_trainer_table.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/002_create_types_table.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/003_create_type_connection_table.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/004_create_abilities_table.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/005_create_abilities_connection.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/006_create_egg_groups_table.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/007_create_egg_group_connection_table.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/008_create_stats_table.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/201_create_captured_table.xml"/>
+
+</databaseChangeLog>
