@@ -17,5 +17,11 @@
 
         </createTable>
     </changeSet>
+    <changeSet id="Load abilities from CSV file" author="wsoksoda">
+        <loadData tableName="abilities" file="db/csv/Abilities.csv">
+            <column name="id" header="id" />
+            <column name="ability" header="ability" />
+        </loadData>
+    </changeSet>
 
 </databaseChangeLog>

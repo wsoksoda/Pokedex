@@ -9,12 +9,9 @@ data class Captured(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    val id: Long,
-
+    val id: Int,
     @Column(name="trainer_id")
-    var trainerId: Long,
-
-
+    var trainerId: Int,
     @Column(name="pokemon_id")
-    val pokemonId: Long
+    val pokemonId: Int
 )

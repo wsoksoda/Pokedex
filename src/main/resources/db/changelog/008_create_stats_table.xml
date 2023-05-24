@@ -8,7 +8,7 @@
 
     <changeSet id="create_stats_table" author="wsoksoda">
         <createTable tableName="stats">
-            <column name="pokemon_id" type="bigint">
+            <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="hp" type="bigint">
@@ -30,6 +30,19 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
+
+    </changeSet>
+
+    <changeSet id="Load stats from CSV file" author="wsoksoda">
+        <loadData tableName="stats" file="db/csv/stats.csv">
+            <column name="id" header="id" />
+            <column name="hp" header="hp" />
+            <column name="speed" header="speed" />
+            <column name="attack" header="attack" />
+            <column name="defense" header="defense" />
+            <column name="special_attack" header="special-attack" />
+            <column name="special_defense" header="special-defense" />
+        </loadData>
     </changeSet>
 
 </databaseChangeLog>

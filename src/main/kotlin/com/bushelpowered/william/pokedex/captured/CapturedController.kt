@@ -9,17 +9,11 @@ import org.springframework.web.bind.annotation.*
 @RestController
 public class CapturedController (val service: CapturedService) {
 
-    @GetMapping
-    fun getAllCaptured() = service.getAllCaptured()
-
     @GetMapping("{id}")
-    fun getAllCapturedById(@PathVariable id:Int) = service.findCaptured(id)
-
-    @GetMapping("info/{id}")
     fun capturedInfo(@PathVariable id:Int) = service.capturedInfo(id)
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun saveTrainer(@RequestBody captured: Captured): Captured =
+    fun saveCaptured(@RequestBody captured: Captured): Captured =
         service.create(captured)
 }

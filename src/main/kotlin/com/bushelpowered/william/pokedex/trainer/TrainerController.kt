@@ -12,12 +12,4 @@ public class TrainerController (val service: TrainerService) {
     @ResponseStatus(HttpStatus.CREATED)
     fun saveTrainer(@RequestBody trainer: Trainer): Trainer =
         service.create(trainer)
-
-    @GetMapping
-    fun getAllTrainers() = service.getAll()
-
-//    @PatchMapping("login")
-//    @ResponseStatus(HttpStatus.ACCEPTED)
-//    fun login(@RequestBody username : String, password: String): Trainer =
-//        service.login(username, password)
 }

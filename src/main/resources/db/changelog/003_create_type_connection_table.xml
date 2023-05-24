@@ -8,14 +8,32 @@
 
     <changeSet id="create_type_connection_table" author="wsoksoda">
         <createTable tableName="type_connection">
-            <column name="pokemon_id" type="bigint">
+            <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="pokemon_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
             <column name="type_id" type="bigint">
-                <constraints primaryKey = "true" nullable="false"/>
+                <constraints nullable="false"/>
             </column>
 
         </createTable>
+    </changeSet>
+
+    <changeSet id="Load type connection from CSV file" author="wsoksoda">
+        <loadData tableName="type_connection" file="db/csv/TypeConnection.csv">
+            <column name="id" header="id" />
+            <column name="pokemon_id" header="pokemon_id" />
+            <column name="type_id" header="type_id" />
+        </loadData>
+    </changeSet>
+
+    <changeSet id="foreign Key Type" author="wsoksoda">
+        <addForeignKeyConstraint baseTableName="type_connection" baseColumnNames="pokemon_id" constraintName="fk_pokemonID" referencedTableName="pokemon"
+                                 referencedColumnNames="id"></addForeignKeyConstraint>
+        <addForeignKeyConstraint baseTableName="type_connection" baseColumnNames="type_id" constraintName="fk_typeID" referencedTableName="types"
+                                 referencedColumnNames="id"></addForeignKeyConstraint>
     </changeSet>
 
 </databaseChangeLog>

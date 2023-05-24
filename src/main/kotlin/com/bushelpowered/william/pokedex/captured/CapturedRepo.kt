@@ -6,6 +6,4 @@ import org.springframework.data.jpa.repository.Query
 import org.springframework.stereotype.Repository
 
 @Repository
-interface CapturedRepo: JpaRepository<Captured,Int>{
-    @Query()
-}
+interface CapturedRepo: JpaRepository<Captured,Int>
