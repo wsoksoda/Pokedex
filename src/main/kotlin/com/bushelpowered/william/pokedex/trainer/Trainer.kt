@@ -8,7 +8,7 @@ data class Trainer(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    val id: Long,
+    val id: Int,
 
     @Column(name = "username")
     val username: String,

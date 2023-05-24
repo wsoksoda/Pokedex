@@ -14,22 +14,10 @@
             <column name="name" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="type" type="varchar(255)">
-                <constraints nullable="false"/>
-            </column>
             <column name="height" type="numeric">
                 <constraints nullable="false"/>
             </column>
             <column name="weight" type="numeric">
-                <constraints nullable="false"/>
-            </column>
-            <column name="abilities" type="varchar(255)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="egg_groups" type="varchar(255)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="stats" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
             <column name="genus" type="varchar(255)">
@@ -40,5 +28,17 @@
             </column>
         </createTable>
     </changeSet>
+
+    <changeSet id="Load pokemon from CSV file" author="wsoksoda">
+        <loadData tableName="pokemon" file="db/csv/Pokemon.csv">
+            <column name="id" header="pokemon_id" />
+            <column name="name" header="pokemon_name" />
+            <column name="height" header="height" />
+            <column name="weight" header="weight" />
+            <column name="genus" header="genus" />
+            <column name="description" header="description" />
+        </loadData>
+    </changeSet>
+
 
 </databaseChangeLog>

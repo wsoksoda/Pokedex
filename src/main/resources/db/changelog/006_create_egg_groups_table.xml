@@ -10,12 +10,22 @@
         <createTable tableName="egg_group">
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
+
             </column>
             <column name="egg_group" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
 
         </createTable>
+
+
+    </changeSet>
+
+    <changeSet id="Load egg from CSV file" author="wsoksoda">
+        <loadData tableName="egg_group" file="db/csv/Egg.csv">
+            <column name="id" header="id" />
+            <column name="egg_group" header="Egg_Group" />
+        </loadData>
     </changeSet>
 
 </databaseChangeLog>

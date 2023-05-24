@@ -18,4 +18,11 @@
         </createTable>
     </changeSet>
 
+    <changeSet id="Load types from CSV file" author="wsoksoda">
+        <loadData tableName="types" file="db/csv/Type.csv">
+            <column name="id" header="id" />
+            <column name="type" header="pokemon_type" />
+        </loadData>
+    </changeSet>
+
 </databaseChangeLog>

@@ -10,19 +10,4 @@ import org.springframework.web.server.ResponseStatusException
 class TrainerService(val repo:TrainerRepo) {
     fun create(trainer: Trainer): Trainer =
         repo.save(trainer)
-
-    fun getAll(): List<Trainer> = repo.findAll()
-
-//    fun login(username: String, password: String): Trainer {
-//        val trainerList = repo.findAll()
-//
-//        for(item in trainerList){
-//            if(username == item.username && password == item.password){
-//                return item
-//            }
-//        }
-//
-//        throw ResponseStatusException(HttpStatus.NOT_FOUND)
-//    }
-
 }
