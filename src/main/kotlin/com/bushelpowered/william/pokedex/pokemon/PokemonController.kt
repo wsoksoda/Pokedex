@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam
 public class PokemonController (val service: service){
 
 
-    @GetMapping("pagination")
+    @GetMapping()
     fun getAllPokemon(@RequestParam(defaultValue = "1") offset: Int, @RequestParam(defaultValue = "10")pageSize: Int) = service.getAll(offset-1,pageSize)
 
     @GetMapping("{id}")
