@@ -22,8 +22,8 @@ data class Pokemon(
         joinColumns = [JoinColumn(name ="pokemonId")],
         inverseJoinColumns = [JoinColumn(name = "typeId")])
     val type: List<Type>,
-    val height: Float,
-    val weight: Float,
+    val height: Double,
+    val weight: Double,
     @OneToMany
     @JoinTable(name = "ability_connection",
         joinColumns = [JoinColumn(name ="pokemonId")],

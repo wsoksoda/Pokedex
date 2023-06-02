@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service
 class CapturedService(val capturedRepo: CapturedRepo, val trainerRepo: TrainerRepo, val pokemonRepo: PokemonRepo) {
 
 
-
     fun capturedInfo(id: Int): List<Pokemon> {
         when (!trainerRepo.existsById(id)) {
             true -> throw NotFoundException()

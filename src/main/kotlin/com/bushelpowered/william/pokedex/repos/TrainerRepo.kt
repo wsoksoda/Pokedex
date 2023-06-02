@@ -8,7 +8,9 @@ import org.springframework.stereotype.Repository
 interface TrainerRepo: JpaRepository<Trainer,Int>{
     fun existsByUsername(username:String):Boolean
 
-    fun findByUsernameAndPassword(username: String, password:String): Trainer
+    fun existsByUsernameAndPassword(username: String, password:String): Boolean
+
+    fun findByUsernameAndPassword(username: String, password:String):Trainer
 
     override fun existsById(id:Int): Boolean
 }

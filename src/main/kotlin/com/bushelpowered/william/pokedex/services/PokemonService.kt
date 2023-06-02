@@ -12,8 +12,9 @@ import org.springframework.stereotype.Service
 
 
 @Service
-class PokemonService(val pokemonRepo: PokemonRepo, val abilityRepo: AbilityRepo,
-                     val typeRepo: TypeRepo, val eggGroupRepo: EggGroupRepo
+class PokemonService(
+    val pokemonRepo: PokemonRepo, val abilityRepo: AbilityRepo,
+    val typeRepo: TypeRepo, val eggGroupRepo: EggGroupRepo
 ) {
 
     fun getAll(offset: Int, pageSize: Int): Page<Pokemon> {
@@ -33,6 +34,7 @@ class PokemonService(val pokemonRepo: PokemonRepo, val abilityRepo: AbilityRepo,
         val pokemonList = pokemonRepo.findByAbility(ability)
         return PageImpl(pokemonList, PageRequest.of(offset, pageSize), pokemonList.size.toLong())
     }
+
     fun getByType(
         typeName: String,
         offset: Int,
@@ -42,6 +44,7 @@ class PokemonService(val pokemonRepo: PokemonRepo, val abilityRepo: AbilityRepo,
         val pokemonList = pokemonRepo.findByType(type)
         return PageImpl(pokemonList, PageRequest.of(offset, pageSize), pokemonList.size.toLong())
     }
+
     fun getByEggGroup(
         eggName: String,
         offset: Int,
@@ -51,6 +54,7 @@ class PokemonService(val pokemonRepo: PokemonRepo, val abilityRepo: AbilityRepo,
         val pokemonList = pokemonRepo.findByEggGroup(eggGroup)
         return PageImpl(pokemonList, PageRequest.of(offset, pageSize), pokemonList.size.toLong())
     }
+
     fun getByGenus(genus: String, offset: Int, pageSize: Int): Page<Pokemon> =
         pokemonRepo.findByGenusContainingOrderByGenus(genus, PageRequest.of(offset, pageSize))
 

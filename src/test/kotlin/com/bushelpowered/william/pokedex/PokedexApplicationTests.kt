@@ -23,6 +23,7 @@ import io.mockk.verify
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.springframework.data.domain.PageImpl
 
 
 class PokedexApplicationTests {
@@ -34,7 +35,7 @@ class PokedexApplicationTests {
     }
 
 
-    val pokemonPageRepo = mockk<PokemonRepo>()
+    val pokemonRepo = mockk<PokemonRepo>()
     val abilityRepo = mockk<AbilityRepo>()
     val capturedRepo = mockk<CapturedRepo>()
     val eggGroupRepo = mockk<EggGroupRepo>()
@@ -46,84 +47,96 @@ class PokedexApplicationTests {
 
     @Test
     fun `find by id`() {
-        every { pokemonService.getById(1) } returns Pokemon(1,
-			"Bulbasaur",
-			listOf(Type(1,"poison"), Type(2,"grass")),
-			7.0F,
-			69.0F,
-			listOf(Ability(1,"chlorophyll"),Ability(2,"overgrow")),
-			listOf(EggGroup(1,"plant"),EggGroup(2,"monster")),
-			Stats(1,45,45,49,49,65,65),
-			"Seed Pokémon",
-			"Bulbasaur can be seen napping in bright sunlight.\\nThere is a seed on its back. By soaking up the sun’s rays,\\nthe seed grows progressively larger.")
-
-        val result = pokemonService.getById(1)
-
-        verify{pokemonService.getById(1)}
-        assertEquals(Pokemon(1,
+        every { pokemonService.getById(1) } returns Pokemon(
+            1,
             "Bulbasaur",
-            listOf(Type(1,"poison"), Type(2,"grass")),
-            7.0F,
-            69.0F,
-            listOf(Ability(1,"chlorophyll"),Ability(2,"overgrow")),
-            listOf(EggGroup(1,"plant"),EggGroup(2,"monster")),
-            Stats(1,45,45,49,49,65,65),
+            listOf(Type(1, "poison"), Type(2, "grass")),
+            7.0,
+            69.0,
+            listOf(Ability(1, "chlorophyll"), Ability(2, "overgrow")),
+            listOf(EggGroup(1, "plant"), EggGroup(2, "monster")),
+            Stats(1, 45, 45, 49, 49, 65, 65),
             "Seed Pokémon",
-            "Bulbasaur can be seen napping in bright sunlight.\\nThere is a seed on its back. By soaking up the sun’s rays,\\nthe seed grows progressively larger."),result)
+            "Bulbasaur can be seen napping in bright sunlight.\\nThere is a seed on its back. By " +
+                    "soaking up the sun’s rays,\\nthe seed grows progressively larger."
+        )
+        val result = pokemonService.getById(1)
+        verify { pokemonService.getById(1) }
+        assertEquals(
+            Pokemon(
+                1,
+                "Bulbasaur",
+                listOf(Type(1, "poison"), Type(2, "grass")),
+                7.0,
+                69.0,
+                listOf(Ability(1, "chlorophyll"), Ability(2, "overgrow")),
+                listOf(EggGroup(1, "plant"), EggGroup(2, "monster")),
+                Stats(1, 45, 45, 49, 49, 65, 65),
+                "Seed Pokémon",
+                "Bulbasaur can be seen napping in bright sunlight.\\nThere is a seed on its back. " +
+                        "By soaking up the sun’s rays,\\nthe seed grows progressively larger."
+            ), result
+        )
     }
 
-//	@Test
-//	fun pokemonTests() {
-//
-//
-//
-//		val items = listOf(
-//			Pokemon(
-//			1,
-//			"TestPokemon",
-//			listOf(Type(1,"TestType1"), Type(2,"TestType2")),
-//			1F,
-//			1F,
-//			listOf(Ability(1,"TestAbility1"),Ability(2,"TestAbility2")),
-//			listOf(EggGroup(1,"TestEggGroup1"),EggGroup(2,"TestEggGroup2")),
-//			Stats(1,1,1,1,1,1,1),
-//			"testGenus",
-//			"Test Pokemon"),
-//
-//			Pokemon(
-//				2,
-//			"TestPokemon2",
-//			listOf(Type(1,"TestType1"), Type(2,"TestType2")),
-//			2F,
-//			2F,
-//			listOf(Ability(1,"TestAbility1"),Ability(2,"TestAbility2")),
-//			listOf(EggGroup(1,"TestEggGroup1"),EggGroup(2,"TestEggGroup2")),
-//			Stats(2,2,2,2,2,2,2),
-//			"testGenus",
-//			"Test Pokemon"))
-//
-//		val pageableResponse = PageImpl(items)
-//		every { pokemonPageRepo.findAll(any<Pageable>) } returns pageableResponse
-//
-//		pokemonPageRepo.findAll()
-//
-//		verify {  }
-//
-//		val pokemonService = mockk<PokemonService>()
-//
-//	}
+    @Test
+    fun `pageable response`() {
+        val items = listOf(
+            Pokemon(
+                1,
+                "Bulbasaur",
+                listOf(Type(1, "poison"), Type(2, "grass")),
+                7.0,
+                69.0,
+                listOf(Ability(1, "chlorophyll"), Ability(2, "overgrow")),
+                listOf(EggGroup(1, "plant"), EggGroup(2, "monster")),
+                Stats(1, 45, 45, 49, 49, 65, 65),
+                "Seed Pokémon",
+                "Bulbasaur can be seen napping in bright sunlight.\\nThere is a seed on its back. " +
+                        "By soaking up the sun’s rays,\\nthe seed grows progressively larger."
+            ), Pokemon(
+                2,
+                "Ivysaur",
+                listOf(Type(1, "poison"), Type(2, "grass")),
+                10.0,
+                130.0,
+                listOf(Ability(1, "chlorophyll"), Ability(2, "overgrow")),
+                listOf(EggGroup(1, "plant"), EggGroup(2, "monster")),
+                Stats(2, 60, 60, 62, 63, 80, 80),
+                "Seed Pokémon",
+                "There is a bud on this Pokémon’s back. To support its weight,\\nIvysaur’s legs and trunk" +
+                        " grow thick and strong.\\nIf it starts spending more time lying in the sunlight,\\nit’s a " +
+                        "sign that the bud will bloom into a large flower soon."
+            )
+        )
+        val pageableResponse = PageImpl(items)
+        every { pokemonService.getAll(1, 2) } returns pageableResponse
+        val result = pokemonService.getAll(1, 2)
+        verify { pokemonService.getAll(1, 2) }
+        assertEquals(pageableResponse, result)
+    }
 
 
     @Test
-    fun trainerTests() {
-        every { trainerService.create(any()) } returns Trainer(100, "TestUsername", "TestPassword", "TestColor")
+    fun `register and login a trainer`() {
+        every { trainerService.create(any()) } returns Trainer(
+            100, "TestUsername", "TestPassword", "TestColor")
 
-        val result = trainerService.create(
+        val create = trainerService.create(
             Trainer(100, "TestUsername", "TestPassword", "TestColor")
         )
 
-        assertEquals(Trainer(100, "TestUsername", "TestPassword", "TestColor"), result)
+        assertEquals(Trainer(100, "TestUsername", "TestPassword", "TestColor"), create)
+
+        every { trainerService.login("TestUsername", "TestPassword") } returns Trainer(
+            100, "TestUsername", "TestPassword", "TestColor"
+        )
+
+        val login = trainerService.login("TestUsername", "TestPassword")
+
+        assertEquals(Trainer(100, "TestUsername", "TestPassword", "TestColor"), login)
     }
+
 
 }
 

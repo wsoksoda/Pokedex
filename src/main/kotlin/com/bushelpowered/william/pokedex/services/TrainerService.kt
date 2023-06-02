@@ -15,8 +15,9 @@ class TrainerService(val repo: TrainerRepo) {
     }
 
     fun login(username: String, password: String): Trainer {
+        val exists = repo.existsByUsernameAndPassword(username, password)
         val trainer = repo.findByUsernameAndPassword(username, password)
-        when (trainer != null) {
+        when (exists) {
             true -> return trainer
             else -> throw UnsupportedOperationException()
         }
