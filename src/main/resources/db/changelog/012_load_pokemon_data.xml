@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+           http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="Load pokemon from CSV file" author="wsoksoda">
+        <loadData tableName="pokemon" file="db/csv/Pokemon.csv">
+            <column name="id" header="pokemon_id" />
+            <column name="name" header="pokemon_name" />
+            <column name="height" header="height" />
+            <column name="weight" header="weight" />
+            <column name="genus" header="genus" />
+            <column name="description" header="description" />
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

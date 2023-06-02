@@ -7,14 +7,26 @@
            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
 
     <include relativeToChangelogFile="true" file="changelog/001_create_pokemon_table.xml"/>
-    <include relativeToChangelogFile="true" file="changelog/101_create_trainer_table.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/020_create_trainer_table.xml"/>
     <include relativeToChangelogFile="true" file="changelog/002_create_types_table.xml"/>
     <include relativeToChangelogFile="true" file="changelog/003_create_type_connection_table.xml"/>
-    <include relativeToChangelogFile="true" file="changelog/004_create_abilities_table.xml"/>
-    <include relativeToChangelogFile="true" file="changelog/005_create_abilities_connection.xml"/>
-    <include relativeToChangelogFile="true" file="changelog/006_create_egg_groups_table.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/004_create_ability_table.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/005_create_ability_connection.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/006_create_egg_group_table.xml"/>
     <include relativeToChangelogFile="true" file="changelog/007_create_egg_group_connection_table.xml"/>
     <include relativeToChangelogFile="true" file="changelog/008_create_stats_table.xml"/>
-    <include relativeToChangelogFile="true" file="changelog/201_create_captured_table.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/009_type_foreign_key_constraint.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/010_ability_foreign_key_constraint.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/011_egg_group_foreign_key_constraint.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/012_load_pokemon_data.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/013_load_type_data.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/014_load_ability_data.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/015_load_egg_group_data.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/016_load_stats_data.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/017_load_type_connection_data.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/018_load_ability_connection_data.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/019_load_egg_group_connection_data.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/020_create_trainer_table.xml"/>
+    <include relativeToChangelogFile="true" file="changelog/021_create_captured_table.xml"/>
 
 </databaseChangeLog>

@@ -1,160 +1,160 @@
 "id","ability"
-1, chlorophyll
-2, overgrow
-3, solar-power
-4, blaze
-5, rain-dish
-6, torrent
-7, run-away
-8, shield-dust
-9, shed-skin
-10, tinted-lens
-11, compound-eyes
-12, sniper
-13, swarm
-14, big-pecks
-15, tangled-feet
-16, keen-eye
-17, hustle
-18, guts
-19, unnerve
-20, intimidate
-21, lightning-rod
-22, static
-23, sand-rush
-24, sand-veil
-25, rivalry
-26, poison-point
-27, sheer-force
-28, friend-guard
-29, magic-guard
-30, cute-charm
-31, unaware
-32, drought
-33, flash-fire
-34, competitive
-35, frisk
-36, infiltrator
-37, inner-focus
-38, stench
-39, effect-spore
-40, damp
-41, dry-skin
-42, wonder-skin
-43, sand-force
-44, arena-trap
-45, technician
-46, pickup
-47, limber
-48, swift-swim
-49, cloud-nine
-50, defiant
-51, anger-point
-52, vital-spirit
-53, justified
-54, water-absorb
-55, synchronize
-56, steadfast
-57, no-guard
-58, gluttony
-59, liquid-ooze
-60, clear-body
-61, sturdy
-62, rock-head
-63, flame-body
-64, regenerator
-65, own-tempo
-66, oblivious
-67, analytic
-68, magnet-pull
-69, early-bird
-70, ice-body
-71, hydration
-72, thick-fat
-73, magic-bounce
-74, poison-touch
-75, sticky-hold
-76, overcoat
-77, skill-link
-78, shell-armor
-79, levitate
-80, cursed-body
-81, weak-armor
-82, forewarn
-83, insomnia
-84, hyper-cutter
-85, aftermath
-86, soundproof
-87, harvest
-88, battle-armor
-89, unburden
-90, reckless
-91, iron-fist
-92, healer
-93, serene-grace
-94, natural-cure
-95, leaf-guard
-96, scrappy
-97, water-veil
-98, illuminate
-99, filter
-100, moxie
-101, mold-breaker
-102, rattled
-103, imposter
-104, anticipation
-105, adaptability
-106, quick-feet
-107, volt-absorb
-108, download
-109, trace
-110, pressure
-111, immunity
-112, snow-cloak
-113, marvel-scale
-114, multiscale
-115, super-luck
-116, plus
-117, sap-sipper
-118, huge-power
-119, drizzle
-120, speed-boost
-121, prankster
-122, telepathy
-123, shadow-tag
-124, light-metal
-125, contrary
-126, pickpocket
-127, honey-gather
-128, magma-armor
-129, moody
-130, suction-cups
-131, sand-stream
-132, poison-heal
-133, truant
-134, wonder-guard
-135, normalize
-136, stall
-137, heavy-metal
-138, pure-power
-139, minus
-140, rough-skin
-141, simple
-142, solid-rock
-143, white-smoke
-144, toxic-boost
-145, storm-drain
-146, forecast
-147, protean
-148, color-change
-149, air-lock
-150, flower-gift
-151, flare-boost
-152, klutz
-153, heatproof
-154, snow-warning
-155, motor-drive
-156, slow-start
-157, bad-dreams
-158, multitype
-159, victory-star
+1,chlorophyll
+2,overgrow
+3,solar-power
+4,blaze
+5,rain-dish
+6,torrent
+7,run-away
+8,shield-dust
+9,shed-skin
+10,tinted-lens
+11,compound-eyes
+12,sniper
+13,swarm
+14,big-pecks
+15,tangled-feet
+16,keen-eye
+17,hustle
+18,guts
+19,unnerve
+20,intimidate
+21,lightning-rod
+22,static
+23,sand-rush
+24,sand-veil
+25,rivalry
+26,poison-point
+27,sheer-force
+28,friend-guard
+29,magic-guard
+30,cute-charm
+31,unaware
+32,drought
+33,flash-fire
+34,competitive
+35,frisk
+36,infiltrator
+37,inner-focus
+38,stench
+39,effect-spore
+40,damp
+41,dry-skin
+42,wonder-skin
+43,sand-force
+44,arena-trap
+45,technician
+46,pickup
+47,limber
+48,swift-swim
+49,cloud-nine
+50,defiant
+51,anger-point
+52,vital-spirit
+53,justified
+54,water-absorb
+55,synchronize
+56,steadfast
+57,no-guard
+58,gluttony
+59,liquid-ooze
+60,clear-body
+61,sturdy
+62,rock-head
+63,flame-body
+64,regenerator
+65,own-tempo
+66,oblivious
+67,analytic
+68,magnet-pull
+69,early-bird
+70,ice-body
+71,hydration
+72,thick-fat
+73,magic-bounce
+74,poison-touch
+75,sticky-hold
+76,overcoat
+77,skill-link
+78,shell-armor
+79,levitate
+80,cursed-body
+81,weak-armor
+82,forewarn
+83,insomnia
+84,hyper-cutter
+85,aftermath
+86,soundproof
+87,harvest
+88,battle-armor
+89,unburden
+90,reckless
+91,iron-fist
+92,healer
+93,serene-grace
+94,natural-cure
+95,leaf-guard
+96,scrappy
+97,water-veil
+98,illuminate
+99,filter
+100,moxie
+101,mold-breaker
+102,rattled
+103,imposter
+104,anticipation
+105,adaptability
+106,quick-feet
+107,volt-absorb
+108,download
+109,trace
+110,pressure
+111,immunity
+112,snow-cloak
+113,marvel-scale
+114,multiscale
+115,super-luck
+116,plus
+117,sap-sipper
+118,huge-power
+119,drizzle
+120,speed-boost
+121,prankster
+122,telepathy
+123,shadow-tag
+124,light-metal
+125,contrary
+126,pickpocket
+127,honey-gather
+128,magma-armor
+129,moody
+130,suction-cups
+131,sand-stream
+132,poison-heal
+133,truant
+134,wonder-guard
+135,normalize
+136,stall
+137,heavy-metal
+138,pure-power
+139,minus
+140,rough-skin
+141,simple
+142,solid-rock
+143,white-smoke
+144,toxic-boost
+145,storm-drain
+146,forecast
+147,protean
+148,color-change
+149,air-lock
+150,flower-gift
+151,flare-boost
+152,klutz
+153,heatproof
+154,snow-warning
+155,motor-drive
+156,slow-start
+157,bad-dreams
+158,multitype
+159,victory-star

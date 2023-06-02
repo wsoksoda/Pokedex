@@ -6,18 +6,18 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
 
-    <changeSet id="create_type_connection_table" author="wsoksoda">
-        <createTable tableName="type_connection">
-            <column name="id" type="bigint">
+    <changeSet id="create_captured_table" author="wsoksoda">
+        <createTable tableName="captured">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="trainer_id" type="bigint">
+                <constraints nullable="false"/>
             </column>
             <column name="pokemon_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
-            <column name="type_id" type="bigint">
-                <constraints nullable="false"/>
-            </column>
-
         </createTable>
     </changeSet>
+
 </databaseChangeLog>

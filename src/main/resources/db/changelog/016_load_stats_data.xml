@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+           http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet id="Load stats from CSV file" author="wsoksoda">
+        <loadData tableName="stats" file="db/csv/stats.csv">
+            <column name="id" header="id"/>
+            <column name="hp" header="hp"/>
+            <column name="speed" header="speed"/>
+            <column name="attack" header="attack"/>
+            <column name="defense" header="defense"/>
+            <column name="special_attack" header="special-attack"/>
+            <column name="special_defense" header="special-defense"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

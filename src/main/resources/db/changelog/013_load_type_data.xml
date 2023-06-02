@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+           http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="Load type data from CSV file" author="wsoksoda">
+        <loadData tableName="type" file="db/csv/Type.csv">
+            <column name="id" header="id" />
+            <column name="type" header="pokemon_type" />
+        </loadData>
+    </changeSet>
+</databaseChangeLog>
