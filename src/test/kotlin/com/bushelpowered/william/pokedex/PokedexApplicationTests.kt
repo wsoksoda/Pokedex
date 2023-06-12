@@ -6,13 +6,6 @@ import com.bushelpowered.william.pokedex.data.Pokemon
 import com.bushelpowered.william.pokedex.data.Stats
 import com.bushelpowered.william.pokedex.data.Trainer
 import com.bushelpowered.william.pokedex.data.Type
-import com.bushelpowered.william.pokedex.repos.AbilityRepo
-import com.bushelpowered.william.pokedex.repos.CapturedRepo
-import com.bushelpowered.william.pokedex.repos.EggGroupRepo
-import com.bushelpowered.william.pokedex.repos.PokemonRepo
-import com.bushelpowered.william.pokedex.repos.TrainerRepo
-import com.bushelpowered.william.pokedex.repos.TypeRepo
-import com.bushelpowered.william.pokedex.services.CapturedService
 import com.bushelpowered.william.pokedex.services.PokemonService
 import com.bushelpowered.william.pokedex.services.TrainerService
 import io.mockk.clearAllMocks
@@ -34,15 +27,7 @@ class PokedexApplicationTests {
         unmockkAll()
     }
 
-
-    val pokemonRepo = mockk<PokemonRepo>()
-    val abilityRepo = mockk<AbilityRepo>()
-    val capturedRepo = mockk<CapturedRepo>()
-    val eggGroupRepo = mockk<EggGroupRepo>()
-    val trainerRepo = mockk<TrainerRepo>()
-    val typeRepo = mockk<TypeRepo>()
     val pokemonService = mockk<PokemonService>()
-    val capturedService = mockk<CapturedService>()
     val trainerService = mockk<TrainerService>()
 
     @Test

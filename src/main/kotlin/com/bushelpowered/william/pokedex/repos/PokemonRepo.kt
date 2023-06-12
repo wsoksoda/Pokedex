@@ -12,8 +12,8 @@ import org.springframework.stereotype.Repository
 @Repository
 
 interface PokemonRepo: PagingAndSortingRepository<Pokemon, Int>{
-    fun findById(id:Int): Pokemon
-    fun findByName(name:String): Pokemon
+    fun findById(id:Int): Pokemon?
+    fun findByNameContaining(name:String, pageable: PageRequest): Page<Pokemon?>
    fun findByGenusContainingOrderByGenus(genus:String, pageable: PageRequest):Page<Pokemon>
 
    fun findByAbility(ability: Ability) : List<Pokemon>

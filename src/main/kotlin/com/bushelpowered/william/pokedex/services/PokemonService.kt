@@ -1,6 +1,7 @@
 package com.bushelpowered.william.pokedex.services
 
 import com.bushelpowered.william.pokedex.data.Pokemon
+import com.bushelpowered.william.pokedex.exceptions.PokemonDoesNotExist
 import com.bushelpowered.william.pokedex.repos.AbilityRepo
 import com.bushelpowered.william.pokedex.repos.EggGroupRepo
 import com.bushelpowered.william.pokedex.repos.PokemonRepo
@@ -21,9 +22,19 @@ class PokemonService(
         return pokemonRepo.findAll(PageRequest.of(offset, pageSize))
     }
 
-    fun getById(id: Int): Pokemon = pokemonRepo.findById(id)
+    fun getById(id: Int): Pokemon? {
+        val exists = pokemonRepo.findById(id)
+        if (exists != null) {
+            return exists
+        } else {
+            throw PokemonDoesNotExist()
+        }
+    }
 
-    fun getByName(name: String): Pokemon = pokemonRepo.findByName(name)
+    fun getByName(name: String, offset: Int, pageSize: Int): Page<Pokemon?> {
+        return pokemonRepo.findByNameContaining(name, PageRequest.of(offset, pageSize))
+
+    }
 
     fun getByAbility(
         abilityName: String,

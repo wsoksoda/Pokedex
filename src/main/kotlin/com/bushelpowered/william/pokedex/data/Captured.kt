@@ -15,7 +15,7 @@ data class Captured(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    val id: Int,
+    val id: Int = 0,
     @Column(name="trainer_id")
     var trainerId: Int,
     @Column(name="pokemon_id")

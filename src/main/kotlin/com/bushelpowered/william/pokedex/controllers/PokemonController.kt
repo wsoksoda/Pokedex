@@ -9,24 +9,28 @@ import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 
-@CrossOrigin(origins = ["http://localhost:5173/"], maxAge = 3600)
+@CrossOrigin(origins = ["http://localhost:5173/", "http://localhost:3000/"], maxAge = 3600)
 @RequestMapping("api/pokemon")
 @RestController
 class PokemonController(val service: PokemonService) {
 
 
     @GetMapping()
-    fun getAllPokemon(@RequestParam(defaultValue = "1") offset: Int,
-                      @RequestParam(defaultValue = "10") pageSize: Int
-    ) = service.getAll(offset-1 , pageSize)
+    fun getAllPokemon(
+        @RequestParam(defaultValue = "1") offset: Int,
+        @RequestParam(defaultValue = "10") pageSize: Int
+    ) = service.getAll(offset - 1, pageSize)
 
     @GetMapping("{id}")
-    fun getPokemon(@PathVariable id: Int
+    fun getPokemon(
+        @PathVariable id: Int
     ) = service.getById(id)
 
-    @GetMapping("/name/{name}")
-    fun getPokemonByName(@PathVariable name: String
-    ) = service.getByName(name)
+    @GetMapping("/name")
+    fun getPokemonByNameContaining(
+        @RequestParam name: String, @RequestParam(defaultValue = "1") offset: Int,
+        @RequestParam(defaultValue = "10") pageSize: Int
+    ) = service.getByName(name, offset - 1, pageSize)
 
     @GetMapping("/ability")
     fun getPokemonByAbility(

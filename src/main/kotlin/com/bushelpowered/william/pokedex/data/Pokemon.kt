@@ -18,22 +18,28 @@ data class Pokemon(
     val id: Int,
     val name: String,
     @OneToMany
-    @JoinTable(name = "type_connection",
-        joinColumns = [JoinColumn(name ="pokemonId")],
-        inverseJoinColumns = [JoinColumn(name = "typeId")])
+    @JoinTable(
+        name = "type_connection",
+        joinColumns = [JoinColumn(name = "pokemonId")],
+        inverseJoinColumns = [JoinColumn(name = "typeId")]
+    )
     val type: List<Type>,
     val height: Double,
     val weight: Double,
     @OneToMany
-    @JoinTable(name = "ability_connection",
-        joinColumns = [JoinColumn(name ="pokemonId")],
-        inverseJoinColumns = [JoinColumn(name = "abilityId")])
+    @JoinTable(
+        name = "ability_connection",
+        joinColumns = [JoinColumn(name = "pokemonId")],
+        inverseJoinColumns = [JoinColumn(name = "abilityId")]
+    )
     @JoinColumn(name = "pokemonId")
     val ability: List<Ability>,
     @OneToMany
-    @JoinTable(name = "egg_group_connection",
-        joinColumns = [JoinColumn(name ="pokemonId")],
-        inverseJoinColumns = [JoinColumn(name = "eggGroupId")])
+    @JoinTable(
+        name = "egg_group_connection",
+        joinColumns = [JoinColumn(name = "pokemonId")],
+        inverseJoinColumns = [JoinColumn(name = "eggGroupId")]
+    )
     @JoinColumn(name = "pokemonId")
     val eggGroup: List<EggGroup>,
     @OneToOne

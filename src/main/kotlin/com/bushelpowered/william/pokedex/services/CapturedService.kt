@@ -2,8 +2,8 @@ package com.bushelpowered.william.pokedex.services
 
 import com.bushelpowered.william.pokedex.data.Captured
 import com.bushelpowered.william.pokedex.data.Pokemon
-import com.bushelpowered.william.pokedex.exceptions.PokemonOrTrainerDoesNotExist
 import com.bushelpowered.william.pokedex.exceptions.TrainerDoesNotExist
+import com.bushelpowered.william.pokedex.exceptions.UnableToCatchPokemon
 import com.bushelpowered.william.pokedex.repos.CapturedRepo
 import com.bushelpowered.william.pokedex.repos.PokemonRepo
 import com.bushelpowered.william.pokedex.repos.TrainerRepo
@@ -23,7 +23,7 @@ class CapturedService(val capturedRepo: CapturedRepo, val trainerRepo: TrainerRe
     fun create(captured: Captured): Captured {
         when (!(trainerRepo.existsById(captured.trainerId) && pokemonRepo.existsById(captured.pokemonId)) ||
                 (capturedRepo.existsByPokemonIdAndTrainerId(captured.pokemonId, captured.trainerId))) {
-            true -> throw PokemonOrTrainerDoesNotExist()
+            true -> throw UnableToCatchPokemon()
             else -> return capturedRepo.save(captured)
         }
     }
