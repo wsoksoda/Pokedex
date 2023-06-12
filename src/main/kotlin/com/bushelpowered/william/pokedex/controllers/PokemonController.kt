@@ -36,9 +36,9 @@ class PokemonController(val service: PokemonService) {
 
     @GetMapping("/egg")
     fun getPokemonByEggGroup(
-        @RequestParam(defaultValue = "") type: String, @RequestParam(defaultValue = "1") offset: Int,
+        @RequestParam(defaultValue = "") eggGroup: String, @RequestParam(defaultValue = "1") offset: Int,
         @RequestParam(defaultValue = "10") pageSize: Int
-    ) = service.getByEggGroup(type, offset - 1, pageSize)
+    ) = service.getByEggGroup(eggGroup, offset - 1, pageSize)
 
     @GetMapping("/type")
     fun getPokemonByType(
